@@ -1,4 +1,6 @@
 package ml.freetirage.apitirage.Service.Implementation;
 
-public class TirageServiceImpl {
+import ml.freetirage.apitirage.Service.TirageService;
+
+public class TirageServiceImpl implements TirageService {
 }
