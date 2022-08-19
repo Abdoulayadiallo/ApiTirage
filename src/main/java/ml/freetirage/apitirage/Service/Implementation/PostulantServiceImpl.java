@@ -1,6 +1,6 @@
 package ml.freetirage.apitirage.Service.Implementation;
 
-import ml.freetirage.apitirage.Modele.Postulant;
+import ml.freetirage.apitirage.Model.Postulant;
 import ml.freetirage.apitirage.Repository.PostulantRepository;
 import ml.freetirage.apitirage.Service.PostulantService;
 import org.springframework.beans.factory.annotation.Autowired;

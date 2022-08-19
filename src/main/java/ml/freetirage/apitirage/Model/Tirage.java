@@ -1,4 +1,4 @@
-package ml.freetirage.apitirage.Modele;
+package ml.freetirage.apitirage.Model;
 
 
 import lombok.Getter;
