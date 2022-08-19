@@ -1,12 +1,15 @@
 package ml.freetirage.apitirage.Service.Implementation;
 
+import lombok.AllArgsConstructor;
 import ml.freetirage.apitirage.Modele.Postulant;
 import ml.freetirage.apitirage.Repository.PostulantRepository;
 import ml.freetirage.apitirage.Service.PostulantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
+@AllArgsConstructor
 public class PostulantServiceImpl implements PostulantService {
 
     @Autowired

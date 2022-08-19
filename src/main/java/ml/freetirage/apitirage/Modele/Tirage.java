@@ -13,7 +13,7 @@ public class Tirage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_tirage;
-    @Temporal(TemporalType.DATE)
+   // @Temporal(TemporalType.DATE)
     private Date date;
     private String libele;
 }
