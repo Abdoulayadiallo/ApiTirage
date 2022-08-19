@@ -13,4 +13,5 @@ public class PostulantTire {
     @Id
     @Column(name = "id_postulantTire")
     private Long id_postulantTire;
+
 }

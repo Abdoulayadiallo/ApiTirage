@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/Tirage")
-public class TirageController {
+@RequestMapping("/PostulantTire")
+public class PostulantTireController {
 }

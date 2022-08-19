@@ -1,7 +1,7 @@
 package ml.freetirage.apitirage.Controller;
 
 import lombok.AllArgsConstructor;
-import ml.freetirage.apitirage.Modele.Postulant;
+import ml.freetirage.apitirage.Model.Postulant;
 import ml.freetirage.apitirage.Service.PostulantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
