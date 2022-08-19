@@ -3,10 +3,8 @@ package ml.freetirage.apitirage.Modele;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Entity
 @Getter
 @Setter
@@ -18,5 +16,7 @@ public class Postulant {
     private String prenom;
     private String email;
     private String numero;
+    @ManyToOne
+    ListePostulant listePostulant;
 
 }
