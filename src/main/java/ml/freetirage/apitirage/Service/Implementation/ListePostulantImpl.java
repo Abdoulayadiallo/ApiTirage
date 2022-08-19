@@ -31,14 +31,14 @@ public class ListePostulantImpl implements ListePostulantService {
                     lp.setLibele(listepostulant.getLibele());
                     lp.setDateListe(listepostulant.getDateListe());
                     lp.setNbr_postulant(listepostulant.getNbr_postulant());
-
                     return listePostulantRepository.save(lp);
-                }).orElseThrow(()-> new RuntimeException("Postulant non trouvé"));
+                }).orElseThrow(()-> new RuntimeException("liste Postulant non trouvé"));
     }
 
     @Override
     public String Supprimer(Long id_liste_Postulant) {
-        return null;
+        listePostulantRepository.deleteById(id_liste_Postulant);
+        return " liste Postulant Supprimé" ;
     }
 
 }
