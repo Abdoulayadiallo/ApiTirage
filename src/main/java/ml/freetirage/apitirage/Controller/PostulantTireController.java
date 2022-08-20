@@ -1,11 +1,23 @@
 package ml.freetirage.apitirage.Controller;
 
 import lombok.AllArgsConstructor;
+
+import ml.freetirage.apitirage.Model.PostulantTire;
+import ml.freetirage.apitirage.Service.PostulantTireService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @AllArgsConstructor
 @RestController
 @RequestMapping("/PostulantTire")
 public class PostulantTireController {
+    PostulantTireService postulanttireservice;
+    @GetMapping("/Afficher")
+    public List<PostulantTire> Afficher(){
+        return postulanttireservice.Afficher();
+    }
+
 }

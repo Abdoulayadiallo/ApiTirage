@@ -21,6 +21,7 @@ public class ListePostulantImpl implements ListePostulantService {
 
     @Override
     public List<ListePostulant> Afficher() {
+
         return listePostulantRepository.findAll();
     }
     @Override

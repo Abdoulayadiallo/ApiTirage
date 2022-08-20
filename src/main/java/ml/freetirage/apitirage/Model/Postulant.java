@@ -18,6 +18,7 @@ public class Postulant {
     private String prenom;
     private String email;
     private String numero;
+
     @ManyToMany(
             fetch = FetchType.LAZY,
             cascade = {
