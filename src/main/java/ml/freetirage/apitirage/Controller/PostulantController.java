@@ -7,7 +7,6 @@ import ml.freetirage.apitirage.Model.Postulant;
 import ml.freetirage.apitirage.Service.ListePostulantService;
 import ml.freetirage.apitirage.Service.PostulantService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,8 +22,8 @@ public class PostulantController {
 
     private final ListePostulantService listePostulantService;
 
-    @PostMapping("/ajoute_postulant/{libelle}")
-    String AjouterPostulant(@RequestParam("file")MultipartFile file, ListePostulant listepostulant,String libelle){
+    @PostMapping("/ajoute_postulant/{libele}")
+    String AjouterPostulant(@RequestParam("file")MultipartFile file, ListePostulant listepostulant){
 
         //PostulantServiceImplement importer= new PostulantServiceImplement();
         //IMPLEMENTATION DE LA METHODE DANS LE CONTROLLER
