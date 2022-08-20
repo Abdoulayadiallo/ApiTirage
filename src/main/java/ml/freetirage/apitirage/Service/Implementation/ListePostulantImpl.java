@@ -31,7 +31,6 @@ public class ListePostulantImpl implements ListePostulantService {
                 .map(lp->{
                     lp.setLibele(listepostulant.getLibele());
                     lp.setDateListe(listepostulant.getDateListe());
-                    lp.setNbr_postulant(listepostulant.getNbr_postulant());
                     return listePostulantRepository.save(lp);
                 }).orElseThrow(()-> new RuntimeException("liste Postulant non trouvé"));
     }

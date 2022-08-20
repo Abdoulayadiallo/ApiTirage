@@ -14,7 +14,6 @@ public class ListePostulant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_liste_postulant")
     private Long id_liste_postulant;
-    private int nbr_postulant;
     private String libele;
     private Date dateListe;
 }
