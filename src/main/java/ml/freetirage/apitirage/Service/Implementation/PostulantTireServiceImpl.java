@@ -11,6 +11,11 @@ import java.util.List;
 @AllArgsConstructor
 public class PostulantTireServiceImpl implements PostulantTireService {
     @Override
+    public PostulantTire CreerPostulantTire() {
+        return null;
+    }
+
+    @Override
     public List<PostulantTire> Afficher() {
         return null;
     }

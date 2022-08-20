@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -29,4 +31,17 @@ public class Postulant {
     @ManyToOne
     ListePostulant listePostulant;
 
+    @ManyToMany(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinTable(
+            name = "PostulantTire",
+            joinColumns = @JoinColumn(name = "id_tirage"),
+            inverseJoinColumns = @JoinColumn(name = "id_postulant")
+    )
+    private List<Tirage> tirage = new ArrayList<>();
 }
