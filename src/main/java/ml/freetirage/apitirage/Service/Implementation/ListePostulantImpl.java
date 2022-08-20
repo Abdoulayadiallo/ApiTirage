@@ -1,27 +1,29 @@
 package ml.freetirage.apitirage.Service.Implementation;
 
 
+import lombok.AllArgsConstructor;
 import ml.freetirage.apitirage.Model.ListePostulant;
 import ml.freetirage.apitirage.Model.Postulant;
+import ml.freetirage.apitirage.Repository.ListePostulantRepository;
 import ml.freetirage.apitirage.Service.ListePostulantService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
+@AllArgsConstructor
 public class ListePostulantImpl implements ListePostulantService {
+    private final ListePostulantRepository listePostulantRepository;
     @Override
-    public ListePostulant Ajouter(ListePostulant listepostulant) {
-        return null;
+    public ListePostulant Ajouter_Liste(ListePostulant listepostulant) {
+        return listePostulantRepository.save(listepostulant);
     }
 
 
-
     @Override
-    public List<ListePostulant> Affiche() {
-        return null;
+    public List<ListePostulant> Afficher_Liste() {
+        return listePostulantRepository.findAll();
     }
 
-    @Override
-    public Postulant Modifier(ListePostulant listepostulant, Long id_liste_postulant) {
-        return null;
-    }
+
 }
