@@ -1,36 +1,43 @@
 package ml.freetirage.apitirage.Controller;
 
 import lombok.AllArgsConstructor;
-import ml.freetirage.apitirage.Modele.Postulant;
+
+import ml.freetirage.apitirage.Model.ListePostulant;
+import ml.freetirage.apitirage.Model.Postulant;
+import ml.freetirage.apitirage.Service.ListePostulantService;
 import ml.freetirage.apitirage.Service.PostulantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
 
+import java.util.ArrayList;
+import java.util.Date;
 @AllArgsConstructor
 @RestController
-@RequestMapping("/Postulant")
+@RequestMapping("/API/Postulant")
 public class PostulantController {
     @Autowired
-    PostulantService postulantService;
-    @PostMapping("/Ajout")
-    public Postulant ajout(@RequestBody Postulant postulant){
-        return postulantService.Ajouter(postulant);
-    }
-    @GetMapping("/Afficher")
-    public List<Postulant> Afficher(){
-        return postulantService.Afficher();
-    }
+    private final PostulantService postulantService;
 
-    @PutMapping("/Modifier")
-    public Postulant Supprimer(@PathVariable Long id_postulant,@RequestBody Postulant postulant){
-        return postulantService.Modifier(postulant,id_postulant);
+    private final ListePostulantService listePostulantService;
 
-    }
-    @DeleteMapping("/Supprimer")
-    public String Supprimer(@PathVariable Long id_postulant){
-     return postulantService.Supprimer(id_postulant);
-    }
+    @PostMapping("/ajoute_postulant/{libelle}")
+    String AjouterPostulant(@RequestParam("file")MultipartFile file, ListePostulant listepostulant,String libelle){
 
+        //PostulantServiceImplement importer= new PostulantServiceImplement();
+        //IMPLEMENTATION DE LA METHODE DANS LE CONTROLLER
+        ArrayList<Postulant> importer= postulantService.INSERPostulant(file);
+        listepostulant.setDateListe(new Date());
+        ListePostulant l = listePostulantService.Ajouter_Liste(listepostulant);
+
+        for (Postulant p: importer)
+        {
+            p.setListePostulant(l);
+            postulantService.creerPostulant(p);
+        }
+
+        return "import avec succes";
+    }
 }

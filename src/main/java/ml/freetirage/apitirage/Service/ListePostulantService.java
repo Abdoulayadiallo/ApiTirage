@@ -7,8 +7,10 @@ import ml.freetirage.apitirage.Model.Postulant;
 import java.util.List;
 
 public interface ListePostulantService {
-    ListePostulant Ajouter(ListePostulant listepostulant);
-    List<ListePostulant>Affiche();
-    Postulant Modifier(ListePostulant listepostulant, Long id_liste_postulant);
+
+    ListePostulant Ajouter_Liste(ListePostulant listepostulant);
+
+    List<ListePostulant> Afficher_Liste();
+
 
 }
