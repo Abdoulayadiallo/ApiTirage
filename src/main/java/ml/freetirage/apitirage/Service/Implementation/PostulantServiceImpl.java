@@ -44,8 +44,7 @@ public class PostulantServiceImpl implements PostulantService {
 
             while (rows.hasNext()){
 
-                values.clear(); // Vider toutes les donnes du tableau dynamique "values"
-
+               
                 HSSFRow row = (HSSFRow) rows.next(); // Recuperation d'une ligne du tableau
 
                 Iterator cells = row.cellIterator(); // Recuperation de toutes toutes les colonnes de chaque ligne
@@ -75,13 +74,6 @@ public class PostulantServiceImpl implements PostulantService {
                     }
                     numColun++;
 
-                    // Condition permettant de verifier le type de la colonne et effectuer une convesion si c'est type int
-                    // if (cell.getCellType() == CellType.NUMERIC){
-                    //   values.add(Integer.toString((int) cell.getNumericCellValue()));
-                    // }
-                    //else{
-                    //  values.add(cell.getStringCellValue());
-                    // }
                 }
 
                 //postulantRepository.INSERTPOSTULANT (values.get(3),values.get(1),values.get(2),values.get(0));

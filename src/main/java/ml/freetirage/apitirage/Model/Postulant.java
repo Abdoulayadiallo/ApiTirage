@@ -28,21 +28,8 @@ public class Postulant {
     private String email;
     @Column(name = "numero")
     private String numero;
-
-    @ManyToMany(
-            fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }
-    )
-    @JoinTable(
-            name = "PostulantTire",
-            joinColumns = @JoinColumn(name = "id_tirage"),
-            inverseJoinColumns = @JoinColumn(name = "id_postulant")
-    )
-    private List<Tirage> tirage = new ArrayList<>();
-
+    @ManyToOne
+    ListePostulant listePostulant;
     @ManyToMany(
             fetch = FetchType.LAZY,
             cascade = {
@@ -57,3 +44,6 @@ public class Postulant {
     )
     private List<Tirage> tirage = new ArrayList<>();
 }
+
+
+
