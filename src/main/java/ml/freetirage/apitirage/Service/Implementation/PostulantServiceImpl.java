@@ -24,24 +24,24 @@ public class PostulantServiceImpl implements PostulantService {
     private final PostulantRepository postulantRepository;
 
     @Override
-    public ArrayList<Postulant> INSERPostulant(MultipartFile file) {
+    public ArrayList<Postulant> InserPostulant(MultipartFile file) {
 
         DataFormatter formatter=new DataFormatter();
-        ArrayList<Postulant> values = new ArrayList<Postulant>(); // Variable permettant de prendre toutes les donnes du tableau
+        ArrayList<Postulant> values = new ArrayList<Postulant>();
 
-        // Bloque permettant de lever les exception lors de l'importation du fichier excel
+        // Block permettant de lever les exception lors de l'importation du fichier excel
         try{
-            //InputStream fichier = new FileInputStream("fichier.xls"); // Recuperation du fichier Execl sous forme de fichier simple
+            // conversion du fichier simple sous forme d'un fichier POI
+            POIFSFileSystem fs = new POIFSFileSystem(file.getInputStream());
+            // Conversion du fichier POI sous format Workbook
+            HSSFWorkbook wb = new HSSFWorkbook(fs);
+            // Recuperation du Premier page du fichier excel
+            HSSFSheet sheet = wb.getSheetAt(0);
+            // Recuperation de tous les lignes de la page du fichier
 
-            POIFSFileSystem fs = new POIFSFileSystem(file.getInputStream()); // conversion du fichier simple sous forme d'un fichier POI
+            Iterator rows = sheet.rowIterator();
 
-            HSSFWorkbook wb = new HSSFWorkbook(fs); // Conversion du fichier POI sous format Workbook
-
-            HSSFSheet sheet = wb.getSheetAt(0); // Recuperation du Premier page du fichier excel
-
-            Iterator rows = sheet.rowIterator(); // Recuperation de tous les lignes de la page du fichier
             // Boucle permettant de parcours toutes lignes de la page
-
             while (rows.hasNext()){
 
                
@@ -76,8 +76,9 @@ public class PostulantServiceImpl implements PostulantService {
 
                 }
 
-                //postulantRepository.INSERTPOSTULANT (values.get(3),values.get(1),values.get(2),values.get(0));
+
                 values.add(p);
+                System.out.println(p.getListePostulant());
             }
             return values;
 
@@ -93,7 +94,6 @@ public class PostulantServiceImpl implements PostulantService {
     @Override
     public Iterable<Object[]> Afficher_Postulant() {
         return null;
-                //postulantRepository.Afficher_Postulant();
     }
 
     @Override
@@ -101,6 +101,10 @@ public class PostulantServiceImpl implements PostulantService {
         return postulantRepository.save(postulant);
     }
 
+    @Override
+    public long NombrePostulant() {
+        return postulantRepository.count();
+    }
 
 
 }

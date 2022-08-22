@@ -38,7 +38,7 @@ public class Postulant {
             }
     )
     @JoinTable(
-            name = "PostulantTire",
+            name = "Postulant_tire",
             joinColumns = @JoinColumn(name = "id_tirage"),
             inverseJoinColumns = @JoinColumn(name = "id_postulant")
     )

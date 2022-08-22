@@ -25,9 +25,9 @@ public class PostulantController {
     @PostMapping("/ajoute_postulant/{libele}")
     String AjouterPostulant(@RequestParam("file")MultipartFile file, ListePostulant listepostulant){
 
-        //PostulantServiceImplement importer= new PostulantServiceImplement();
+
         //IMPLEMENTATION DE LA METHODE DANS LE CONTROLLER
-        ArrayList<Postulant> importer= postulantService.INSERPostulant(file);
+        ArrayList<Postulant> importer= postulantService.InserPostulant(file);
         listepostulant.setDateListe(new Date());
         ListePostulant l = listePostulantService.Ajouter_Liste(listepostulant);
 
