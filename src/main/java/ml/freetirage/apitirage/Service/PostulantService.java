@@ -1,13 +1,16 @@
 package ml.freetirage.apitirage.Service;
 
 import ml.freetirage.apitirage.Model.Postulant;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface PostulantService {
+    //Declaration des methodes du Service Postulant
+    ArrayList<Postulant> INSERPostulant(MultipartFile file);
 
-    Postulant Ajouter(Postulant postulant);
-    List<Postulant> Afficher();
-    Postulant Modifier(Postulant postulant,Long id_postulant);
-    String Supprimer(Long id_postulant);
+    Iterable<Object[]> Afficher_Postulant();
+
+    Postulant creerPostulant(Postulant postulant);
 }

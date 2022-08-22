@@ -8,7 +8,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 @Entity
 @Getter
@@ -17,9 +16,9 @@ public class Tirage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_tirage;
+    // @Temporal(TemporalType.DATE)
     private Date date;
     private String libele;
-
     @ManyToMany(
             fetch = FetchType.LAZY,
             cascade = {
