@@ -19,6 +19,7 @@ public class Tirage {
     // @Temporal(TemporalType.DATE)
     private Date date;
     private String libele;
+    private int n_tirage ;
     @ManyToMany(
             fetch = FetchType.LAZY,
             cascade = {
@@ -27,7 +28,7 @@ public class Tirage {
             }
     )
     @JoinTable(
-            name = "PostulantTire",
+            name = "Postulant_tire",
             joinColumns = @JoinColumn(name = "id_postulant"),
             inverseJoinColumns = @JoinColumn(name = "id_tirage")
     )

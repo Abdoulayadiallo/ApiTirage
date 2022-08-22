@@ -8,9 +8,11 @@ import java.util.ArrayList;
 
 public interface PostulantService {
     //Declaration des methodes du Service Postulant
-    ArrayList<Postulant> INSERPostulant(MultipartFile file);
+    ArrayList<Postulant> InserPostulant(MultipartFile file);
 
     Iterable<Object[]> Afficher_Postulant();
 
     Postulant creerPostulant(Postulant postulant);
+
+    long NombrePostulant();
 }
