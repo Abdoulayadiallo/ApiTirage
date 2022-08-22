@@ -1,7 +1,6 @@
 package ml.freetirage.apitirage.Service;
 
 import ml.freetirage.apitirage.Model.ListePostulant;
-import ml.freetirage.apitirage.Model.Postulant;
 
 
 import java.util.List;
