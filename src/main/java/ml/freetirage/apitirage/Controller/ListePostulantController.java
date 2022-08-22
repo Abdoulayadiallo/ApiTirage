@@ -16,23 +16,16 @@ public class ListePostulantController {
     ListePostulantService listePostulantService;
     @PostMapping("/Ajout")
     public ListePostulant Ajouter(@RequestBody ListePostulant listepostulant) {
-        return listePostulantService.Ajouter(listepostulant);
+        return listePostulantService.Ajouter_Liste(listepostulant);
     }
 
     @GetMapping("/Afficher")
     public List<ListePostulant> Afficher() {
-        return listePostulantService.Afficher();
+        return listePostulantService.Afficher_Liste();
     }
 
-    @PutMapping("/Modifier")
-    public ListePostulant Supprimer(@PathVariable Long id_liste_postulant, @RequestBody ListePostulant listepostulant) {
-        return listePostulantService.Modifier(listepostulant, id_liste_postulant);
 
-    }
 
-    @DeleteMapping("/Supprimer")
-    public String Supprimer(@PathVariable Long id_liste_postulant) {
-        return listePostulantService.Supprimer(id_liste_postulant);
-    }
+
 
 }
