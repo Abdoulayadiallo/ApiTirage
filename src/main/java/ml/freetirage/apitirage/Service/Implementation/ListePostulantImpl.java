@@ -21,6 +21,11 @@ public class ListePostulantImpl implements ListePostulantService {
         return listePostulantRepository.save(listepostulant);
     }
 
+    @Override
+    public ListePostulant trouverListeparLibele(String libele) {
+        return listePostulantRepository.findBylibele(libele);
+    }
+
 
     @Override
     public List<ListePostulant> Afficher_Liste() {

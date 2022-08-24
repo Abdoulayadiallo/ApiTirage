@@ -10,6 +10,8 @@ public interface ListePostulantService {
 
     ListePostulant Ajouter_Liste(ListePostulant listepostulant);
 
+    ListePostulant trouverListeparLibele(String libele);
+
     List<ListePostulant> Afficher_Liste();
 
 
