@@ -46,4 +46,29 @@ public class TirageController {
         return "Succes";
     }
 
+    @Autowired
+    private final TirageService tirageService;
+
+    private final PostulantService postulantService;
+
+    private final ListePostulantService listePostulantService;
+    @PostMapping("/CreerTirage")
+    public String CreerTirage(@RequestBody Tirage tirage){
+
+        tirageService.CreerTirage(tirage);
+        Random random = new Random();
+        List<Postulant> postulant = new ArrayList<>();
+
+        for (int i = 0; i<tirage.getN_tirage();i++){
+            long nb_Aleatoire = random.nextLong(postulantService.NombrePostulant());
+
+            ArrayList<Integer> ListeNombreAleatoire = new ArrayList<>();
+
+            ListeNombreAleatoire.add((int) nb_Aleatoire);
+
+        }
+
+        return "Succes";
+    }
+
 }
