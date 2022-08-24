@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface PostulantService {
     //Declaration des methodes du Service Postulant
@@ -14,5 +15,5 @@ public interface PostulantService {
 
     Postulant creerPostulant(Postulant postulant);
 
-    long NombrePostulant();
+    List<Postulant> TrouverPostulantId(long id_liste_postulant);
 }

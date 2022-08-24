@@ -1,18 +1,19 @@
 package ml.freetirage.apitirage.Model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
+@Data
+@Table(name = "postulanttire")
 public class PostulantTire {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id_postulantTire")
+    @Column(name = "id_postulant_tire")
     private Long id_postulantTire;
+
+
 }

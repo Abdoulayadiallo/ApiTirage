@@ -15,15 +15,18 @@ public class PostulantTireServiceImpl implements PostulantTireService {
    @Autowired
    private PostulantTireRepository postulantTireRepository;
 
-    @Override
-    public PostulantTire CreerPostulantTire(PostulantTire postulantTire) {
-        postulantTire.setId_postulantTire(postulantTire.getId_postulantTire());
-        return postulantTireRepository.save(postulantTire);
-    }
 
+//    @Override
+//    public int CreerPostulantTire(Long id_postulant, Long id_tirage) {
+//        return postulantTireRepository.InsererPostulantTire(id_postulant,id_tirage);
+//    }
 
     @Override
     public List<PostulantTire> Afficher() {
         return postulantTireRepository.findAll();
     }
+
+
+
+
 }
