@@ -1,5 +1,6 @@
 package ml.freetirage.apitirage.Service;
 
+import ml.freetirage.apitirage.Model.ListePostulant;
 import ml.freetirage.apitirage.Model.Postulant;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,4 +18,6 @@ public interface PostulantService {
 
     long NombrePostulant();
     List<Postulant> TrouverPostulantId(long id_postulant);
+
+    List<Postulant> trouverListPostulantParId(Long liste_id);
 }

@@ -8,4 +8,5 @@ public interface PostulantTireService {
     PostulantTire CreerPostulantTire();
     List<PostulantTire> Afficher();
     int InsertPostulant(String nom, String prenom, String numero, String email);
+    int Listepostulanttire(Long id_postulant, Long id_tirage);
 }

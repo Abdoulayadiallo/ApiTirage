@@ -1,6 +1,7 @@
 package ml.freetirage.apitirage.Service.Implementation;
 
 import lombok.AllArgsConstructor;
+import ml.freetirage.apitirage.Model.ListePostulant;
 import ml.freetirage.apitirage.Model.Postulant;
 import ml.freetirage.apitirage.Repository.PostulantRepository;
 import ml.freetirage.apitirage.Service.PostulantService;
@@ -111,6 +112,11 @@ public class PostulantServiceImpl implements PostulantService {
     @Override
     public List<Postulant> TrouverPostulantId(long id) {
         return postulantRepository.findByIdpostulant(id);
+    }
+
+    @Override
+    public List<Postulant> trouverListPostulantParId(Long liste_id) {
+        return postulantRepository.AfficherPostulantList(liste_id);
     }
 
 }

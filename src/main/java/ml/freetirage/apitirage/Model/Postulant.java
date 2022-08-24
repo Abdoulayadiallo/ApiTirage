@@ -26,6 +26,8 @@ public class Postulant {
     private String numero;
     @ManyToOne
     ListePostulant listePostulant;
+
+
     @ManyToMany(
             fetch = FetchType.LAZY,
             cascade = {
@@ -33,8 +35,9 @@ public class Postulant {
                     CascadeType.MERGE
             }
     )
+    //definition de la relation entre les deux tables Jointable pour lier les deux colone dans chaque table
     @JoinTable(
-            name = "Postulant_tire",
+            name = "PostulantTire",
             joinColumns = @JoinColumn(name = "id_tirage"),
             inverseJoinColumns = @JoinColumn(name = "id_postulant")
     )
