@@ -15,8 +15,4 @@ public class PostulantTire {
     @Id
     @Column(name = "id_postulantTire")
     private Long id_postulantTire;
-    private String nom;
-    private String prenom;
-    private String email;
-    private String numero;
 }

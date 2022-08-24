@@ -30,6 +30,7 @@ public class Postulant {
     private String numero;
     @ManyToOne
     ListePostulant listePostulant;
+    /*
     @ManyToMany(
             fetch = FetchType.LAZY,
             cascade = {
@@ -43,6 +44,7 @@ public class Postulant {
             inverseJoinColumns = @JoinColumn(name = "id_postulant")
     )
     private List<Tirage> tirage = new ArrayList<>();
+    */
 }
 
 
