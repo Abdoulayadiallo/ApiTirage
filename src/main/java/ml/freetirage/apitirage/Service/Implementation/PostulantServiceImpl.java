@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 @AllArgsConstructor
 @Service
@@ -103,8 +104,8 @@ public class PostulantServiceImpl implements PostulantService {
     }
 
     @Override
-    public long NombrePostulant() {
-        return postulantRepository.count();
+    public List<Postulant> TrouverPostulantId(long id_liste_postulant) {
+        return postulantRepository.TrouverPostulantparListe(id_liste_postulant);
     }
 
 

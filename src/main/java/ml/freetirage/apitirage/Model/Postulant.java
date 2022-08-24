@@ -30,7 +30,7 @@ public class Postulant {
     private String numero;
     @ManyToOne
     ListePostulant listePostulant;
-    /*
+
     @ManyToMany(
             fetch = FetchType.LAZY,
             cascade = {
@@ -39,12 +39,12 @@ public class Postulant {
             }
     )
     @JoinTable(
-            name = "Postulant_tire",
+            name = "postulanttire",
             joinColumns = @JoinColumn(name = "id_tirage"),
             inverseJoinColumns = @JoinColumn(name = "id_postulant")
     )
     private List<Tirage> tirage = new ArrayList<>();
-    */
+
 }
 
 

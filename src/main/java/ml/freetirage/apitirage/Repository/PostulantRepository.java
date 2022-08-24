@@ -4,10 +4,10 @@ import ml.freetirage.apitirage.Model.Postulant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 public interface PostulantRepository extends JpaRepository<Postulant, Long> {
     //Iterable<Object[]> Afficher_Postulant();
@@ -19,6 +19,9 @@ public interface PostulantRepository extends JpaRepository<Postulant, Long> {
 
     @Query(value = "SELECT postulant.prenom,postulant.nom,postulant.numero,postulant.numero;",nativeQuery = true)
    public Iterable<Object> AfficherPostulant();
+
+    @Query(value = "SELECT * FROM postulant WHERE liste_postulant_id_liste_postulant=:id_liste ",nativeQuery = true)
+    public List<Postulant> TrouverPostulantparListe(long id_liste);
 
 
 }
