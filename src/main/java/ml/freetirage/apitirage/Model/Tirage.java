@@ -20,6 +20,7 @@ public class Tirage {
     private Date date;
     private String libele;
     private int n_tirage ;
+    /*
     @ManyToMany(
             fetch = FetchType.LAZY,
             cascade = {
@@ -33,4 +34,5 @@ public class Tirage {
             inverseJoinColumns = @JoinColumn(name = "id_tirage")
     )
     private List<Postulant> postulant = new ArrayList<>();
+    */
 }

@@ -21,6 +21,7 @@ import java.util.Random;
 @RestController
 @RequestMapping("/Tirage")
 public class TirageController {
+
     @Autowired
     private final TirageService tirageService;
 
