@@ -11,7 +11,7 @@ public interface PostulantService {
     //Declaration des methodes du Service Postulant
     ArrayList<Postulant> InserPostulant(MultipartFile file);
 
-    Iterable<Object[]> Afficher_Postulant();
+    List<Postulant> Afficher_Postulant();
 
     Postulant creerPostulant(Postulant postulant);
 

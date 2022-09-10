@@ -13,6 +13,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+@CrossOrigin(origins = "http://localhost:4200")
 @AllArgsConstructor
 @RestController
 @RequestMapping("/API/Postulant")
@@ -38,5 +41,9 @@ public class PostulantController {
         }
 
         return "import avec succes";
+    }
+    @GetMapping("/Afficher")
+    List<Postulant> Afficher_Postulant(){
+        return postulantService.Afficher_Postulant();
     }
 }
