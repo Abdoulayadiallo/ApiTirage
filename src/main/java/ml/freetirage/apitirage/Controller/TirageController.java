@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @AllArgsConstructor
 @RestController
 @RequestMapping("/Tirage")
@@ -45,6 +46,10 @@ public class TirageController {
         return "Tirage effectué avec succès !";
 
 
+    }
+    @GetMapping("/AfficherTirage")
+    public List<Tirage> AfficherTirage(){
+        return tirageService.AfficherTirage();
     }
 
 }
