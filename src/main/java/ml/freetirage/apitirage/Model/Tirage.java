@@ -1,6 +1,7 @@
 package ml.freetirage.apitirage.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
