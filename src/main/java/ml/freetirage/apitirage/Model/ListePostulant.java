@@ -10,6 +10,7 @@ import java.util.Date;
 @Setter
 @Getter
 public class ListePostulant {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_liste_postulant")
