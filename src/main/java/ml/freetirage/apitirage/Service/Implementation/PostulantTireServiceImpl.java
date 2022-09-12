@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class PostulantTireServiceImpl implements PostulantTireService {
    @Autowired
-   private PostulantTireRepository postulantTireRepository;
+   private final PostulantTireRepository postulantTireRepository;
 
 
 //    @Override

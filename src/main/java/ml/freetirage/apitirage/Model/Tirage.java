@@ -1,6 +1,7 @@
 package ml.freetirage.apitirage.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +20,7 @@ public class Tirage {
     // @Temporal(TemporalType.DATE)
     private Date date;
     private String libele;
-    private int n_tirage ;
+    private long n_tirage ;
 
     @ManyToMany(
             fetch = FetchType.LAZY,
