@@ -26,7 +26,7 @@ public class PostulantController {
     private final ListePostulantService listePostulantService;
 
     @PostMapping("/ajoute_postulant/{libele}")
-    String AjouterPostulant(@RequestParam("file")MultipartFile file, ListePostulant listepostulant){
+    public String AjouterPostulant(@RequestParam("file")MultipartFile file, ListePostulant listepostulant){
 
 
         //IMPLEMENTATION DE LA METHODE DANS LE CONTROLLER
@@ -43,7 +43,7 @@ public class PostulantController {
         return "import avec succes";
     }
     @GetMapping("/Afficher")
-    List<Postulant> Afficher_Postulant(){
+    public List<Postulant> Afficher_Postulant(){
         return postulantService.Afficher_Postulant();
     }
 }

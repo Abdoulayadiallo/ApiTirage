@@ -19,7 +19,7 @@ public class Tirage {
     // @Temporal(TemporalType.DATE)
     private Date date;
     private String libele;
-    private int n_tirage ;
+    private long n_tirage ;
 
     @ManyToMany(
             fetch = FetchType.LAZY,

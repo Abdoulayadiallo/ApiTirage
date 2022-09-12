@@ -18,12 +18,12 @@ import java.util.Random;
 @AllArgsConstructor
 public class TirageServiceImpl implements TirageService {
     @Autowired
-    private TirageRepository tirageRepository;
+    private final TirageRepository tirageRepository;
     private final PostulantRepository postulantRepository;
 
 
     @Override
-    public List<Postulant> creerTirage(@RequestBody Tirage tirage, List<Postulant> listAtrier, long n_tirage) {
+    public List<Postulant> creerTirage(Tirage tirage, List<Postulant> listAtrier, long n_tirage) {
         Random rand = new Random();
 
         List<Postulant> list = new ArrayList<>();
