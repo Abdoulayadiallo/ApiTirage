@@ -1,10 +1,7 @@
 package ml.freetirage.apitirage.Model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -17,8 +14,8 @@ public class Tirage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_tirage;
-    // @Temporal(TemporalType.DATE)
-    private Date date;
+    //@Temporal(TemporalType.DATE)
+    private Date date = new Date();
     private String libele;
     private long n_tirage ;
 

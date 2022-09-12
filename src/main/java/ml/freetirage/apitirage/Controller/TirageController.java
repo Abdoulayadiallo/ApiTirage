@@ -32,7 +32,6 @@ public class TirageController {
 
     @PostMapping("/CreerTirage/{libele}/{n_tirage}")
     public String CreerTirage(@RequestBody Tirage tirage, @PathVariable String libele, @PathVariable long n_tirage) {
-
         ListePostulant liste = listePostulantService.trouverListeparLibele(libele);
         List<Postulant> post = postulantService.TrouverPostulantId(liste.getId_liste_postulant());
 

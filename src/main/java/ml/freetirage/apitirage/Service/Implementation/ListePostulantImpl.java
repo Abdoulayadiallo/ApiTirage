@@ -34,7 +34,7 @@ public class ListePostulantImpl implements ListePostulantService {
 
     @Override
     public ListePostulant trouverListeParLibele(String libele) {
-        return listePostulantRepository.findByLibele(libele);
+        return listePostulantRepository.findBylibele(libele);
     }
 
 

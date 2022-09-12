@@ -10,5 +10,7 @@ public interface ListePostulantRepository extends JpaRepository<ListePostulant,L
 
     @Query(value = "select l.date,l.libele From liste_postulant As l;",nativeQuery = true)
     public Iterable<Object[]> AfficherListe();
-    ListePostulant findByLibele(String libele);
+
+    ListePostulant findBylibele(String libele);
+
 }
