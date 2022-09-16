@@ -26,7 +26,10 @@ public class PostulantTireServiceImpl implements PostulantTireService {
         return postulantTireRepository.findAll();
     }
 
-
+    @Override
+    public int NombreTirageParListe() {
+        return postulantTireRepository.nombreTirageParListe();
+    }
 
 
 }

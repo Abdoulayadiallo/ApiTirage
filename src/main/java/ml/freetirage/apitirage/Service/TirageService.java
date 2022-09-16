@@ -11,4 +11,6 @@ public interface TirageService {
     Tirage trouverTirageParLibelle(String libele);
 
     List<Tirage> AfficherTirage();
+    List<Object>  NombreParlisteTirage();
+    public int nombreListeTire();
 }

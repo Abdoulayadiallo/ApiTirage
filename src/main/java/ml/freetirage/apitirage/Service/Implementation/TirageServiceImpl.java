@@ -55,4 +55,16 @@ public class TirageServiceImpl implements TirageService {
     public List<Tirage> AfficherTirage() {
         return tirageRepository.findAll();
     }
+
+    @Override
+    public List<Object> NombreParlisteTirage() {
+        return tirageRepository.nombreTirageParListe();
+    }
+
+    @Override
+    public int nombreListeTire() {
+        return tirageRepository.nombreListeTire();
+    }
+
+
 }

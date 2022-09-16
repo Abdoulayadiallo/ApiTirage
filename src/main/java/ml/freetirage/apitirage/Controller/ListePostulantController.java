@@ -24,7 +24,10 @@ public class ListePostulantController {
     public List<ListePostulant> Afficher() {
         return listePostulantService.Afficher_Liste();
     }
-
+    @GetMapping("/AfficherListe")
+    public Iterable<Object[]> AfficherListe(){
+       return listePostulantService.AfficherListe();
+    }
 
 
 

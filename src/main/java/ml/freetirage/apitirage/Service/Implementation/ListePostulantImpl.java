@@ -37,5 +37,10 @@ public class ListePostulantImpl implements ListePostulantService {
         return listePostulantRepository.findBylibele(libele);
     }
 
+    @Override
+    public Iterable<Object[]> AfficherListe() {
+        return listePostulantRepository.AfficherListe();
+    }
+
 
 }

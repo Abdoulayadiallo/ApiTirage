@@ -30,7 +30,6 @@ public class PostulantServiceImpl implements PostulantService {
 
         DataFormatter formatter=new DataFormatter();
         ArrayList<Postulant> values = new ArrayList<Postulant>();
-
         // Block permettant de lever les exception lors de l'importation du fichier excel
         try{
             // conversion du fichier simple sous forme d'un fichier POI
@@ -106,6 +105,11 @@ public class PostulantServiceImpl implements PostulantService {
     @Override
     public List<Postulant> TrouverPostulantId(long id_liste_postulant) {
         return postulantRepository.TrouverPostulantparListe(id_liste_postulant);
+    }
+
+    @Override
+    public List<Object> AfficherAvecLibele() {
+        return postulantRepository.PostulantListe();
     }
 
 

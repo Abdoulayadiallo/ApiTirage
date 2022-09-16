@@ -16,12 +16,11 @@ public interface PostulantRepository extends JpaRepository<Postulant, Long> {
     @Transactional
     @Query(value = "INSERT INTO postulant (email,nom,numero,prenom) values (:email,:nom,:numero,:prenom);",nativeQuery = true)
     public int INSERTPOSTULANT(@Param("nom") String nom,@Param("prenom") String prenom,@Param("email") String email,@Param("numero") String numero);
-
-    @Query(value = "SELECT postulant.prenom,postulant.nom,postulant.numero,postulant.numero;",nativeQuery = true)
-   public Iterable<Object> AfficherPostulant();
-
     @Query(value = "SELECT * FROM postulant WHERE liste_postulant_id_liste_postulant=:id_liste ",nativeQuery = true)
     public List<Postulant> TrouverPostulantparListe(long id_liste);
+
+    @Query(value = "SELECT id_postulant, nom,prenom,numero,email,libele FROM postulant,liste_postulant WHERE postulant.liste_postulant_id_liste_postulant = liste_postulant.id_liste_postulant;",nativeQuery = true)
+    public List<Object> PostulantListe();
 
 
 }

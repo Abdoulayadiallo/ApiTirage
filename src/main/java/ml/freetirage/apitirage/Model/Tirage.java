@@ -1,9 +1,11 @@
 package ml.freetirage.apitirage.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +17,9 @@ public class Tirage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_tirage;
     //@Temporal(TemporalType.DATE)
-    private Date date = new Date();
+   // private Date date = new Date();
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime date = LocalDateTime.now();
     private String libele;
     private long n_tirage ;
 
@@ -28,8 +32,8 @@ public class Tirage {
     )
     @JoinTable(
             name = "postulanttire",
-            joinColumns = @JoinColumn(name = "id_postulant"),
-            inverseJoinColumns = @JoinColumn(name = "id_tirage")
+            joinColumns = @JoinColumn(name = "id_tirage"),
+            inverseJoinColumns = @JoinColumn(name = "id_postulant")
     )
     private List<Postulant> postulant = new ArrayList<>();
 

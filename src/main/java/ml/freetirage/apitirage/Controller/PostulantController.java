@@ -27,8 +27,6 @@ public class PostulantController {
 
     @PostMapping("/ajoute_postulant/{libele}")
     public String AjouterPostulant(@RequestParam("file")MultipartFile file, ListePostulant listepostulant){
-
-
         //IMPLEMENTATION DE LA METHODE DANS LE CONTROLLER
         ArrayList<Postulant> importer= postulantService.InserPostulant(file);
         listepostulant.setDateListe(new Date());
@@ -45,5 +43,10 @@ public class PostulantController {
     @GetMapping("/Afficher")
     public List<Postulant> Afficher_Postulant(){
         return postulantService.Afficher_Postulant();
+    }
+
+    @GetMapping("/AfficherLibelle")
+    public List<Object> AfficherAveclibele(){
+        return postulantService.AfficherAvecLibele();
     }
 }

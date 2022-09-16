@@ -42,8 +42,8 @@ public class Postulant {
     )
     @JoinTable(
             name = "postulanttire",
-            joinColumns = @JoinColumn(name = "id_tirage"),
-            inverseJoinColumns = @JoinColumn(name = "id_postulant")
+            joinColumns = @JoinColumn(name = "id_postulant"),
+            inverseJoinColumns = @JoinColumn(name = "id_tirage")
     )
     private List<Tirage> tirage = new ArrayList<>();
 

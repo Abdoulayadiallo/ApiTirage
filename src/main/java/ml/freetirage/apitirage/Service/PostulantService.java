@@ -16,4 +16,5 @@ public interface PostulantService {
     Postulant creerPostulant(Postulant postulant);
 
     List<Postulant> TrouverPostulantId(long id_liste_postulant);
+    List<Object> AfficherAvecLibele();
 }

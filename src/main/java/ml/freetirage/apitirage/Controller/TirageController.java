@@ -3,7 +3,6 @@ package ml.freetirage.apitirage.Controller;
 import lombok.AllArgsConstructor;
 import ml.freetirage.apitirage.Model.ListePostulant;
 import ml.freetirage.apitirage.Model.Postulant;
-import ml.freetirage.apitirage.Model.PostulantTire;
 import ml.freetirage.apitirage.Model.Tirage;
 import ml.freetirage.apitirage.Service.ListePostulantService;
 import ml.freetirage.apitirage.Service.PostulantService;
@@ -12,9 +11,7 @@ import ml.freetirage.apitirage.Service.TirageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @AllArgsConstructor
@@ -47,7 +44,16 @@ public class TirageController {
     }
     @GetMapping("/AfficherTirage")
     public List<Tirage> AfficherTirage(){
+
         return tirageService.AfficherTirage();
+    }
+    @GetMapping("/compteParListe")
+    public List<Object> compterparListe(){
+        return tirageService.NombreParlisteTirage();
+    }
+    @GetMapping("/NombreListeTire")
+    public int nombreListeTire(){
+        return tirageService.nombreListeTire();
     }
 
 }

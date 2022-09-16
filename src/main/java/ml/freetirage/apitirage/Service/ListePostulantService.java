@@ -15,6 +15,7 @@ public interface ListePostulantService {
     List<ListePostulant> Afficher_Liste();
 
     ListePostulant trouverListeParLibele(String libele);
+    public Iterable<Object[]> AfficherListe();
 
 
 }
