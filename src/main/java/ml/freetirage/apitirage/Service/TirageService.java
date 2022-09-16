@@ -13,4 +13,6 @@ public interface TirageService {
     List<Tirage> AfficherTirage();
     List<Object>  NombreParlisteTirage();
     public int nombreListeTire();
+
+    public List<Tirage>  LienListeTireParId(long id_liste_postulant);
 }

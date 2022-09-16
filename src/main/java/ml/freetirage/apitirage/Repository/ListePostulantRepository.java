@@ -1,6 +1,7 @@
 package ml.freetirage.apitirage.Repository;
 
 import ml.freetirage.apitirage.Model.ListePostulant;
+import ml.freetirage.apitirage.Model.Tirage;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -12,5 +13,7 @@ public interface ListePostulantRepository extends JpaRepository<ListePostulant,L
     public Iterable<Object[]> AfficherListe();
 
     ListePostulant findBylibele(String libele);
+
+
 
 }

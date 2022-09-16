@@ -55,5 +55,9 @@ public class TirageController {
     public int nombreListeTire(){
         return tirageService.nombreListeTire();
     }
+    @GetMapping("/AfficherListeParId/{id_liste_postulant}")
+    public List<Tirage> LienParIdListe(@PathVariable  long id_liste_postulant){
+        return tirageService.LienListeTireParId(id_liste_postulant);
+    }
 
 }

@@ -65,6 +65,12 @@ public class TirageServiceImpl implements TirageService {
     public int nombreListeTire() {
         return tirageRepository.nombreListeTire();
     }
+    @Override
+    public List<Tirage>  LienListeTireParId(long id_liste_postulant) {
+        return tirageRepository.LienListeTireParId(id_liste_postulant);
+    }
+
+
 
 
 }
