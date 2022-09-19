@@ -21,6 +21,8 @@ public interface PostulantRepository extends JpaRepository<Postulant, Long> {
 
     @Query(value = "SELECT id_postulant, nom,prenom,numero,email,libele FROM postulant,liste_postulant WHERE postulant.liste_postulant_id_liste_postulant = liste_postulant.id_liste_postulant;",nativeQuery = true)
     public List<Object> PostulantListe();
+    @Query(value = "SELECT COUNT(DISTINCT(id_postulant)) FROM postulant;",nativeQuery = true)
+    public int PostulantTotal();
 
 
 }

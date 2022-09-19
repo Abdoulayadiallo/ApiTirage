@@ -112,5 +112,10 @@ public class PostulantServiceImpl implements PostulantService {
         return postulantRepository.PostulantListe();
     }
 
+    @Override
+    public int PostulantTotal() {
+        return postulantRepository.PostulantTotal();
+    }
+
 
 }

@@ -49,4 +49,8 @@ public class PostulantController {
     public List<Object> AfficherAveclibele(){
         return postulantService.AfficherAvecLibele();
     }
+    @GetMapping("/Total")
+    public int PostulantTotal(){
+        return postulantService.PostulantTotal();
+    }
 }

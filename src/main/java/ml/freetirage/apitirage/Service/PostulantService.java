@@ -17,4 +17,5 @@ public interface PostulantService {
 
     List<Postulant> TrouverPostulantId(long id_liste_postulant);
     List<Object> AfficherAvecLibele();
+    public int PostulantTotal();
 }
